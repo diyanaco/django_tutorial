@@ -1,5 +1,4 @@
-{# tutorial/templates/tutorial/people.html #} 
-{% load render_table from django_tables2 %}
+{% load static %} {% load render_table from django_tables2 %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,14 +14,20 @@
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
   </head>
   <body>
-    <a href="../">
-      <button mat-icon-button>
-        <span class="material-icons"> arrow_back </span>
-        Go Back
-      </button>
-    </a>
-    {% render_table table %}
+    <div class="container">
+      <h1> Listing of all elements in table User</h1>
+      {% render_table table %}
+      <div class="action">
+        <a href="../">
+          <button mat-icon-button>
+            <span class="material-icons"> arrow_back </span>
+            Go Back
+          </button>
+        </a>
+      </div>
+    </div>
   </body>
 </html>
